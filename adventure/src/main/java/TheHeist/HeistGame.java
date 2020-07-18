@@ -401,71 +401,75 @@ public class HeistGame extends GameDescription {
             output.append("Inserisci un comando valido come prima parola!");
         } else {
             
-            if (p.getCommand().getType() == CommandType.NORD) {
-                output = commandNorth(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.SOUTH) {
-                output = commandSouth(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.EAST) {
-                output = commandEast(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.WEST) {
-                output = commandWest(p, output);
-                
-            } else if (p.getCommand().getType() == CommandType.INVENTORY) {
-                output = commandInventory(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.LOOK) {
-                output = commandLook(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.EXAMINE) {
-                output = commandExamine(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.PICK_UP) {
-                output = commandPickUp(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.ATTACK) {
-                output = commandAttack(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.OPEN) {
-                output = commandOpen(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.CLOSE) {
-                output = commandClose(p, output);
-                
-            } else if (p.getCommand().getType() == CommandType.DROP) {
-                output = commandDrop(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.PUT) {
-                output = commandPut(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.PUSH) {
-                output = commandPush(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.EQUIP) {
-                output = commandEquip(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.UNEQUIP) {
-                output = commandUnequip(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.TALK_TO) {
-                output = commandTalkTo(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.GIVE) {
-                output = commandGive(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.USE) {
-                output = commandUse(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.CUT) {
-                output = commandCut(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.TURN_OFF) {
-                output = commandTurnOff(p, output);
-
-            } else if (p.getCommand().getType() == CommandType.RELOAD) {
-                output = commandReload(p, output);
+            if (null != p.getCommand().getType()) switch (p.getCommand().getType()) {
+                case NORD:
+                    output = commandNorth(p, output);
+                    break;
+                case SOUTH:
+                    output = commandSouth(p, output);
+                    break;
+                case EAST:
+                    output = commandEast(p, output);
+                    break;
+                case WEST:
+                    output = commandWest(p, output);
+                    break;
+                case INVENTORY:
+                    output = commandInventory(p, output);
+                    break;
+                case LOOK:
+                    output = commandLook(p, output);
+                    break;
+                case EXAMINE:
+                    output = commandExamine(p, output);
+                    break;
+                case PICK_UP:
+                    output = commandPickUp(p, output);
+                    break;
+                case ATTACK:
+                    output = commandAttack(p, output);
+                    break;
+                case OPEN:
+                    output = commandOpen(p, output);
+                    break;
+                case CLOSE:
+                    output = commandClose(p, output);
+                    break;
+                case DROP:
+                    output = commandDrop(p, output);
+                    break;
+                case PUT:
+                    output = commandPut(p, output);
+                    break;
+                case PUSH:
+                    output = commandPush(p, output);
+                    break;
+                case EQUIP:
+                    output = commandEquip(p, output);
+                    break;
+                case UNEQUIP:
+                    output = commandUnequip(p, output);
+                    break;
+                case TALK_TO:
+                    output = commandTalkTo(p, output);
+                    break;
+                case GIVE:
+                    output = commandGive(p, output);
+                    break;
+                case USE:
+                    output = commandUse(p, output);
+                    break;
+                case CUT:
+                    output = commandCut(p, output);
+                    break;
+                case TURN_OFF:
+                    output = commandTurnOff(p, output);
+                    break;
+                case RELOAD:
+                    output = commandReload(p, output);
+                    break;
+                default:
+                    break;
             }
 
             
